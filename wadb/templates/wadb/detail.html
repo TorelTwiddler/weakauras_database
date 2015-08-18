@@ -1,0 +1,10 @@
+{% extends 'wadb/base.html' %}
+
+{% block content %}
+<h1>{{ weakaura.title }}</h1>
+<ul>
+    {% for data in weakaura.weakauradata_set.all %}
+    <li>{{ data.version }} {{ data.data }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

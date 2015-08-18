@@ -1,0 +1,15 @@
+{% extends 'wadb/base.html' %}
+
+{% block content %}
+{%  if weakaura_list %}
+<ul>
+    {% for weakaura in weakaura_list %}
+    <li>
+        <a href="{% url 'wadb:detail' weakaura.id %}">{{ weakaura.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No WeakAuras to show!</p>
+{% endif %}
+{% endblock %}

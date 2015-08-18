@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'wadb/bootstrap/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'wadb/style.css' %}"/>
+    </head>
+
+    <body>
+        {% block content %}{% endblock %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="{% static 'wadb/bootstrap/js/bootstrap.min.js' %}"></script>
+    </body>
+</html>
+
+
