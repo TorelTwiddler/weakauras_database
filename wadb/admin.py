@@ -15,7 +15,8 @@ class WeakAuraDataInline(admin.TabularInline):
 class WeakAuraAdmin(admin.ModelAdmin):
     readonly_fields = ('datetime_created',)
     fieldsets = [
-        (None,          {'fields': ['title', 'description', 'author']}),
+        (None,          {'fields': ['title', 'description', 'author',
+                                    'tags']}),
         ("Rarely Used", {'fields': ['datetime_created'],
                          'classes': ['collapse']}),
     ]

@@ -1,0 +1,12 @@
+body {
+    padding-top: 50px;
+}
+
+.wad-data {
+    font-family: Consolas, monospace;
+    display: inline;
+}
+
+.wad-version {
+    display: inline;
+}

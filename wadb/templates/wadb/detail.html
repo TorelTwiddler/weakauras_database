@@ -1,10 +1,27 @@
 {% extends 'wadb/base.html' %}
 
+{% block head %}
+    <script>
+{#        function copyToClipboard(element) {#}
+{#            var $temp = $("<input>");#}
+{#            $("body").append($temp);#}
+{#            $temp.val($(element).text()).select();#}
+{#            document.execCommand("copy");#}
+{#            $temp.remove();#}
+{#        }#}
+    </script>
+{% endblock %}
+
 {% block content %}
-<h1>{{ weakaura.title }}</h1>
-<ul>
-    {% for data in weakaura.weakauradata_set.all %}
-    <li>{{ data.version }} {{ data.data }}</li>
-    {% endfor %}
-</ul>
+    <h2>{{ weakaura.title }}</h2>
+    <div class="description">{{ weakaura.description }}</div>
+    <ul>
+        {% for data in weakaura.weakauradata_set.all %}
+        <li>
+            <div class="wad-version">{{ data.version }}</div>
+            <label for="{{ data.id }}">WeakAura data:</label>
+            <input id="{{ data.id }}" type="text" value="{{ data.data }}" class="field left" readonly>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
